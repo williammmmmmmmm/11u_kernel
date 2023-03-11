@@ -1,0 +1,27 @@
+name: Build 11u_kernel master
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout kernel source
+      uses: actions/checkout@v2
+
+    - name: Checkout zipper
+      uses: actions/checkout@v2
+      with:
+        repository: MiCode/Xiaomi_Kernel_OpenSource
+        path: star-r-oss
+
+    - name: Android kernel build
+      uses: lemniskett/android-kernel-actions@master
+      id: build
+      with:
+        arch: arm64
+        compiler: clang/11
+        defconfig: vender/star_QGKI.config
+        image: Image.gz-dtb
