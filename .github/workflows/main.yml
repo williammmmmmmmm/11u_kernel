@@ -23,5 +23,5 @@ jobs:
       with:
         arch: arm64
         compiler: clang/11
-        defconfig: gki_defconfig
+        defconfig: vendor/star_QGKI.config
         image: Image.gz-dtb
