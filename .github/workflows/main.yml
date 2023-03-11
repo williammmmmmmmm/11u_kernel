@@ -2,7 +2,7 @@ name: Build 11u_kernel master
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
