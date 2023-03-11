@@ -15,7 +15,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: MiCode/Xiaomi_Kernel_OpenSource
-        path: star-r-oss
+        path: alioth-r-oss
 
     - name: Android kernel build
       uses: lemniskett/android-kernel-actions@master
@@ -23,5 +23,5 @@ jobs:
       with:
         arch: arm64
         compiler: clang/11
-        defconfig: vendor/star_QGKI.config
+        defconfig: alioth_user_defconfig
         image: Image.gz-dtb
